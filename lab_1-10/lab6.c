@@ -195,7 +195,6 @@ static int is_kaprekar(unsigned long long number, int base)
         power *= (unsigned int)base;
         left = square / power;
         right = square % power;
-        /* Правая часть не должна быть пустой или состоять только из нулей. */
         if (right != 0 && left + right == number)
         {
             return 1;
@@ -204,7 +203,6 @@ static int is_kaprekar(unsigned long long number, int base)
     return 0;
 }
 
-/* В arguments передаются count строк с числами. flags должен иметь count ячеек. */
 static Status find_kaprekar_numbers(int base, int count, int *flags, ...)
 {
     va_list arguments;

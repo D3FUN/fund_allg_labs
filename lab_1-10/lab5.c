@@ -230,7 +230,6 @@ static Status calculate_integral(Function function, double epsilon, double *resu
     double right = 1.0;
     double old_value;
 
-    /* У третьего интеграла в точке 1 бесконечность, поэтому берём точку немного левее. */
     if (function == integral_c_function)
     {
         right = 1.0 - epsilon * epsilon;

@@ -12,7 +12,6 @@ typedef enum
     STATUS_WRITE_ERROR
 } Status;
 
-/* Читает одну лексему. Лексема - всё до пробела, табуляции или перевода строки. */
 static Status read_word(FILE *file, char **word, int *end_of_file)
 {
     int symbol;
