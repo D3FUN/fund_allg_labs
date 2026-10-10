@@ -1,0 +1,18 @@
+ЛАБОРАТОРНАЯ 4
+Файл можно указать как входной: ./lab4 -d tests/lab4_tests.txt
+Либо: ./lab4 -ni tests/lab4_tests.txt result.txt
+
+КОРРЕКТНЫЕ ДАННЫЕ
+Hello123 world!
+Строка 42: AbCd, 987.
+No_digits_here
+0 1 2 3 4 5 6 7 8 9
+!!!@@@###
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+
+ОШИБОЧНЫЕ ПАРАМЕТРЫ (вводить вручную)
+-z tests/lab4_tests.txt
+-d missing_file.txt
+-nd tests/lab4_tests.txt tests/lab4_tests.txt
+
