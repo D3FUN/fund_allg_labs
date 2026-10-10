@@ -186,15 +186,6 @@ static Status process_file(FILE *input, FILE *output, char action)
     }
 }
 
-static void print_help(const char *program_name)
-{
-    printf("Использование:\n");
-    printf("  %s -d <входной_файл>\n", program_name);
-    printf("  %s -nd <входной_файл> <выходной_файл>\n", program_name);
-    printf("Флаги: -d (убрать цифры), -i (посчитать латинские буквы),\n");
-    printf("       -s (посчитать специальные символы), -a (заменить нецифры на ASCII в hex).\n");
-}
-
 int main(int argc, char *argv[])
 {
     const char *input_name;
@@ -208,7 +199,6 @@ int main(int argc, char *argv[])
     if (argc < 3)
     {
         printf("Ошибка: недостаточно аргументов.\n");
-        print_help(argv[0]);
         return 1;
     }
     if (argv[1][0] != '-' && argv[1][0] != '/')
@@ -223,7 +213,6 @@ int main(int argc, char *argv[])
         if (argv[1][3] != '\0' || argc != 4)
         {
             printf("Ошибка: для флага с n нужны входной и выходной файлы.\n");
-            print_help(argv[0]);
             return 1;
         }
     }
@@ -233,14 +222,12 @@ int main(int argc, char *argv[])
         if (argv[1][2] != '\0' || argc != 3)
         {
             printf("Ошибка: неверное количество аргументов или формат флага.\n");
-            print_help(argv[0]);
             return 1;
         }
     }
     if (action != 'd' && action != 'i' && action != 's' && action != 'a')
     {
         printf("Ошибка: неизвестный флаг.\n");
-        print_help(argv[0]);
         return 1;
     }
     input_name = argv[2];
